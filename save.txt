@@ -1,0 +1,100 @@
+function MainFrane_OnVarLoad(this)
+    this:ClearAllAnchors();
+    if not MainFrane_X or not MainFrane_Y then
+        this:SetAnchor("CENTER", "CENTER", "UIParent", 0, 0);
+	else
+	   local scale = GetUIScale();
+	   this:SetAnchor("TOPLEFT", "TOPLEFT", "UIParent", MainFrane_X / scale, MainFrane_Y / scale);
+    end
+end
+
+function MainFrane_MoveEnd()
+    MainFrane:StopMovingOrSizing();
+    MainFrane_X, MainFrane_Y = MainFrane:GetPos();
+end
+
+
+
+--[[function hello()
+  print("hello");
+end;
+hello();
+--[[function superGratz()
+SendChatMessage(lvlThree[math.random(0,table.getn(lvlThree))], "say" );
+end
+superGratz()
+--[[local MainFrane = CreateFrame("Frame", "GratzFrame", UIParent, "BasicFrameTemplateWithInset");
+MainFrane:SetSize(100, 160); --width, height
+MainFrane:SetPoint("TOP", UIParent, "CENTER", 0, 300); --point, relativeFrame, relativePoint, xOffset, yOffset
+
+--Child frames and regions:
+
+MainFrane.title = MainFrane:CreateFontString(nil, "OVERLAY");
+MainFrane.title:SetFontObject("GameFontHighlight");
+MainFrane.title:SetPoint("LEFT", MainFrane.TitleBg, "LEFT", 5, 0);
+MainFrane.title:SetText("Gratzopoly");
+
+--UI Super Gratz button:
+MainFrane.SuperGratz = CreateFrame("Button", "SuperGratz", MainFrane, "GameMenuButtonTemplate");
+MainFrane.SuperGratz:SetPoint("BOTTOM", MainFrane, "TOP", 0, -60);
+MainFrane.SuperGratz:SetSize(75, 35);
+MainFrane.SuperGratz:SetText("Super Gratz");
+MainFrane.SuperGratz:SetNormalFontObject("GameFontNormalSmall");
+MainFrane.SuperGratz:SetHighlightFontObject("GameFontHighlightMedium");
+MainFrane.SuperGratz:RegisterForClicks("LeftButtonDown");
+MainFrane.SuperGratz:SetScript("OnClick", function (self, button, down)
+  GratzSayLvlThree();
+end);
+
+
+--UI Big Gratz Button
+MainFrane.bigGratz = CreateFrame("Button", nil, MainFrane, "GameMenuButtonTemplate");
+MainFrane.bigGratz:SetPoint("TOP", MainFrane.SuperGratz, "BOTTOM", 0, -10);
+MainFrane.bigGratz:SetSize(75, 35);
+MainFrane.bigGratz:SetText("Big Gratz");
+MainFrane.bigGratz:SetNormalFontObject("GameFontNormalSmall");
+MainFrane.bigGratz:SetHighlightFontObject("GameFontHighlightLarge");
+MainFrane.bigGratz:SetScript("OnClick", function (self, button, down)
+  GratzSayLvlTwo();
+end);
+
+--UI Gratz Button
+MainFrane.gratz = CreateFrame("Button", nil, MainFrane, "GameMenuButtonTemplate");
+MainFrane.gratz:SetPoint("TOP", MainFrane.bigGratz, "BOTTOM", 0, -10);
+MainFrane.gratz:SetSize(75, 35);
+MainFrane.gratz:SetText("Gratz");
+MainFrane.gratz:SetNormalFontObject("GameFontNormalSmall");
+MainFrane.gratz:SetHighlightFontObject("GameFontHighlightLarge");
+MainFrane.gratz:SetScript("OnClick", function (self, button, down)
+  GratzSayLvlOne();
+end);
+
+--Slider1
+--[[MainFrane.slider1 = CreateFrame("Slider", nil, MainFrane, "OptionsSliderTemplate");
+MainFrane.slider1:SetPoint("TOP", MainFrane.gratz, "BOTTOM", 0, -20);
+MainFrane.slider1:SetValueStep(1);
+MainFrane.slider1:SetMinMaxValues(1, 100);
+MainFrane.slider1:SetObeyStepOnDrag(true);
+--MainFrane.slider1:SetOrientation("VERTICAL");
+
+--Slider 2
+MainFrane.slider2 = CreateFrame("Slider", nil, MainFrane, "OptionsSliderTemplate");
+MainFrane.slider2:SetPoint("TOP", MainFrane.slider1, "BOTTOM", 0, -20);
+MainFrane.slider2:SetValueStep(1);
+MainFrane.slider2:SetMinMaxValues(1, 100);
+MainFrane.slider2:SetObeyStepOnDrag(true);
+
+--Check Buttons
+
+--Check Button 1
+MainFrane.checkbtn1 = CreateFrame("CheckButton", nil, MainFrane, "UICheckButtonTemplate");
+MainFrane.checkbtn1:SetPoint("TOPLEFT", MainFrane.slider1, "BOTTOMLEFT", -10, -40);
+MainFrane.checkbtn1.text:SetText("My Check box");
+
+--Check Button 2
+MainFrane.checkbtn2 = CreateFrame("CheckButton", nil, MainFrane, "UICheckButtonTemplate");
+MainFrane.checkbtn2:SetPoint("TOPLEFT", MainFrane.checkbtn1, "BOTTOMLEFT", 0, 0);
+MainFrane.checkbtn2.text:SetText("My Second button to check");
+MainFrane.checkbtn2:SetChecked(true);
+]]
+]]

@@ -1,0 +1,9 @@
+## Interface: 60200
+## Title: GratzATron5000
+## Author: Hyrax
+## DefaultState: enabled
+## SavedVariablesPerCharacter: GratzATron5000PerSettings
+
+
+gratzData.lua
+core.lua

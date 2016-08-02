@@ -1,7 +1,20 @@
-print("Type /gat5 to show the GratzATron5000 if you have closed it.")
-SLASH_GratzATron5000Show1 = "/gat5"
-SlashCmdList["GratzATron5000Show"] = function()
-  GratzFrame:Show()
+print("GratzATron5000 v1.0 is now loaded");
+print("Type /gat5 help for a list of commands");
+
+SLASH_gat1 = "/gat5"
+SlashCmdList["gat"] = function(msg, editbox)
+  if msg == 'help' then
+    print('/gat5 show will open the GratzATron5000 window');
+    print('/gat5 config will open the options window');
+  elseif msg == 'show' then
+  GratzFrame:Show();
+    --print('test for /gat5 show');
+  elseif msg == 'config' then
+    ConfigFrame:Show();
+    --print('test for /gat5 config');
+  else
+    print("I'm sorry, that is not a proper command for the GratzATron5000");
+  end
 end
 
 function MainFrame_OnVarLoad(this)
@@ -30,7 +43,6 @@ end
 function gratz()
 SendChatMessage("(Drew): " .. lvlOne[math.random(0,table.getn(lvlOne))], "guild" );
 end
-
 
 
 local MainFrame = CreateFrame("Frame", "GratzFrame", UIParent, "BasicFrameTemplateWithInset");
@@ -98,3 +110,4 @@ MainFrame.gratz:SetHighlightFontObject("GameFontHighlightLarge");
 MainFrame.gratz:SetScript("OnClick", function (self, button, down)
   gratz();
 end);
+ConfigFrame:Hide(); --Hidding the Config Frame until needed

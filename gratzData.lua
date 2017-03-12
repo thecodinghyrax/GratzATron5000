@@ -28,4 +28,6 @@ lvlOne = {
   "w00t",
   "Way to go!",
   "Gratz you",
+  "Fantastic",
+  "Nice job"
 }
